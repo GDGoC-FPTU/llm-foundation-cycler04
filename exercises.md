@@ -31,11 +31,15 @@ Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử
 
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
 
-> *Câu trả lời của bạn*
+> Khi temperature tăng từ 0 → 1.5, các phản hồi trở nên đa dạng hơn về nội dung, cấu trúc và góc nhìn (ví dụ: phở, bánh mì, cà phê, hang Sơn Đoòng). Ở temperature thấp (0), câu trả lời gần như lặp lại cùng một ý tưởng với độ ổn định cao; trong khi temperature cao làm tăng tính sáng tạo nhưng cũng giảm tính nhất quán về chủ đề trung tâm. Nói cách khác, temperature càng cao thì độ “ngẫu nhiên” và đa dạng nội dung càng lớn.
+
+> Chi tiết các câu trả lời có thể thấy ở temperature_test_results.txt
 
 **Bạn sẽ đặt temperature bao nhiêu cho chatbot hỗ trợ khách hàng, và tại sao?**
 
-> *Câu trả lời của bạn*
+> Em sẽ chọn  **temperature ≈ 0.2**.
+
+> Vì khi hỗ trợ khách hàng quan tâm đến sự chính xác, tin cậy hơn tính sáng tạo, đa dạng của mô hình. Nhưng không nên đặt temperature = 0 hoàn toàn vì đó sẽ khiến câu trả lời quả máy móc, không thoải mái để thực hiện trò chuyện.
 
 ---
 
@@ -45,11 +49,62 @@ Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi n
 
 **Ước tính xem GPT-4o đắt hơn GPT-4o-mini bao nhiêu lần cho workload này:**
 
-> *Câu trả lời của bạn*
+> **Tổng workload:**
+>
+> * 10.000 người dùng/ngày
+> * Mỗi người 3 API calls → 30.000 calls/ngày
+> * Mỗi call ~350 tokens →
+>
+>   → Tổng tokens/ngày = 30.000 × 350 = **10.500.000 tokens (~10.5M)**
+>
+> **Mức giá GPT là:**
+>
+> * GPT-4o: ~ $5 / 1M input tokens, $15 / 1M output tokens (xấp xỉ trung bình ~ $10–15 / 1M mixed)
+> * GPT-4o-mini: ~ $0.15 / 1M tokens (xấp xỉ)
+>
+> Giả sử case cân bằng 50/50 input/output
+>
+> Giả sử 1M tokens gồm:
+>
+> * 0.5M input
+> * 0.5M output
+>
+> Chi phí:
+>
+> **GPT-4o:**
+>
+> * input: 0.5 × 5 = 2.5$
+> * output: 0.5 × 15 = 7.5$
+>
+>   → tổng = **10$**
+>
+> **GPT-4o-mini:**
+>
+> * 1M × 0.15 = **0.15$**
+>
+> Ratio:
+>
+> * 10 / 0.15 ≈ **66×**
 
 **Mô tả một trường hợp mà chi phí cao hơn của GPT-4o là xứng đáng, và một trường hợp GPT-4o-mini là lựa chọn tốt hơn:**
 
-> *Câu trả lời của bạn*
+> #### GPT-4o:
+>
+> Ví dụ: **hệ thống tư vấn pháp lý cần quyết định quan trọng**
+>
+> Người dùng hỏi: “Hợp đồng này có rủi ro gì?”, “Tôi nên đầu tư không?”, “Chẩn đoán này có nguy hiểm không?”
+> Khi này mô hình cần độ chính xác cao nhất có thể với: reasoning nhiều bước, giảm hallucination tối đa.
+>
+> Ở đây GPT-4o đáng tiền vì chất lượng câu trả lời là ưu tiên lớn nhất trong case này.
+>
+> #### GPT-4o-mini:
+>
+> Ví dụ: **chatbot hỗ trợ khách hàng tra cứu đơn giản:**
+>
+> * “Đơn hàng của tôi ở đâu?”, “Giờ làm việc là gì?”, "Giám đốc công ty là ai"
+> * Chủ yếu chất lượng nhờ vào độ chính xác của tài liệu retrieved, câu hỏi dễ trả lời, và vì câu trả lời đơn giản khách hàng mong chờ được đáp ứng nhanh chóng.
+>
+> GPT-4o-mini tốt hơn trường hợp này vì không cần thiết reasoning phức tạp để trả lời, có thể tiết kiệm chi phí, và thời gian inference cũng nhanh hơn, trả về câu trả lời nhanh cho người dùng.
 
 ---
 
@@ -57,17 +112,19 @@ Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi n
 
 **Streaming quan trọng nhất trong trường hợp nào, và khi nào thì non-streaming lại phù hợp hơn?** (1 đoạn văn)
 
-> *Câu trả lời của bạn*
+> Streaming quan trọng nhất trong các hệ thống có yêu cầu tương tác liên tục với người dùng , ví dụ như chatbot, trợ lý AI, hoặc các ứng dụng viết nội dung, nơi việc hiển thị từng phần câu trả lời giúp người dùng cảm nhận phản hồi nhanh hơn dù tổng thời gian xử lý không đổi. Nó cũng hữu ích khi câu trả lời dài, vì người dùng có thể bắt đầu đọc ngay thay vì chờ toàn bộ output được sinh xong. 
+>
+> Ngược lại, non-streaming phù hợp hơn trong các tác vụ cần tính toàn vẹn đầu ra và không cần tính tương tác, ví dụ như như khi mô hình cần đọc và tóm tắt văn bản theo pipeline quy mô lớn.
 
 ## Danh Sách Kiểm Tra Nộp Bài
 
 - [X] Tất cả tests pass: `pytest tests/ -v`
 - [X] `call_openai` đã triển khai và kiểm thử
-- [ ] `call_openai_mini` đã triển khai và kiểm thử
-- [ ] `compare_models` đã triển khai và kiểm thử
-- [ ] `streaming_chatbot` đã triển khai và kiểm thử
-- [ ] `retry_with_backoff` đã triển khai và kiểm thử
-- [ ] `batch_compare` đã triển khai và kiểm thử
-- [ ] `format_comparison_table` đã triển khai và kiểm thử
-- [ ] `exercises.md` đã điền đầy đủ
-- [ ] Sao chép bài làm vào folder `solution` và đặt tên theo quy định
+- [X] `call_openai_mini` đã triển khai và kiểm thử
+- [X] `compare_models` đã triển khai và kiểm thử
+- [X] `streaming_chatbot` đã triển khai và kiểm thử
+- [X] `retry_with_backoff` đã triển khai và kiểm thử
+- [X] `batch_compare` đã triển khai và kiểm thử
+- [X] `format_comparison_table` đã triển khai và kiểm thử
+- [X] `exercises.md` đã điền đầy đủ
+- [X] Sao chép bài làm vào folder `solution` và đặt tên theo quy định
