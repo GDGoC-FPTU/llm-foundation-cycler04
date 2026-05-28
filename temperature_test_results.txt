@@ -1,0 +1,128 @@
+Prompt: Hãy kể cho tôi một sự thật thú vị về Việt Nam.
+Runs per temperature: 3
+
+Temperature: 0 | Run: 1
+Response: Một sự thật thú vị về Việt Nam là:
+
+**Món phở, biểu tượng ẩm thực của Việt Nam, có nguồn gốc và tên gọi được cho là chịu ảnh hưởng từ món ăn Pháp.**
+
+Cụ thể, nhiều nhà nghiên cứu cho rằng tên gọi "phở" có thể bắt nguồn từ món **"pot-au-feu"** (pô-tô-phơ) của Pháp – một món thịt bò hầm rau củ. Người Pháp đã mang thịt bò đến Việt Nam, và người Việt đã khéo léo kết hợp nó với sợi phở truyền thống và nước dùng đậm đà để tạo nên món phở trứ danh ngày nay.
+
+Đây là một ví dụ tuyệt vời về sự giao thoa văn hóa ẩm thực độc đáo!
+Latency: 9.28s
+Usage: {'input_tokens': 14, 'output_tokens': 162}
+--------------------------------------------------------------------------------
+Temperature: 0 | Run: 2
+Response: Một sự thật thú vị về Việt Nam là:
+
+**Món phở, biểu tượng ẩm thực của Việt Nam, có nguồn gốc và tên gọi được cho là chịu ảnh hưởng từ món ăn Pháp.**
+
+Cụ thể, nhiều nhà nghiên cứu cho rằng tên gọi "phở" có thể bắt nguồn từ món **"pot-au-feu"** (pô-tô-phơ) của Pháp – một món thịt bò hầm rau củ. Người Pháp đã mang thịt bò đến Việt Nam, và người Việt đã khéo léo kết hợp nó với sợi phở truyền thống và nước dùng đậm đà để tạo nên món phở trứ danh ngày nay.
+
+Đây là một ví dụ tuyệt vời về sự giao thoa văn hóa ẩm thực độc đáo!
+Latency: 7.64s
+Usage: {'input_tokens': 14, 'output_tokens': 162}
+--------------------------------------------------------------------------------
+Temperature: 0 | Run: 3
+Response: Một sự thật thú vị về Việt Nam là món **Phở**, một trong những món ăn nổi tiếng và được yêu thích nhất của đất nước.
+
+Điều thú vị là, mặc dù Phở là một món súp đầy đủ và bổ dưỡng, nó thường được người Việt Nam thưởng thức vào **bữa sáng**. Nó được coi là một cách tuyệt vời để bắt đầu ngày mới, cung cấp năng lượng và hương vị đậm đà. Nước dùng của Phở thường được ninh hàng giờ với xương và các loại gia vị đặc trưng, tạo nên hương vị khó quên.
+Latency: 9.24s
+Usage: {'input_tokens': 14, 'output_tokens': 118}
+--------------------------------------------------------------------------------
+Temperature: 0.5 | Run: 1
+Response: Một sự thật thú vị về Việt Nam là:
+
+**Phở, món ăn biểu tượng của Việt Nam, thường được người Việt thưởng thức vào bữa sáng!**
+
+Mặc dù nhiều người nước ngoài nghĩ Phở là món ăn tối, nhưng ở Việt Nam, việc bắt đầu một ngày mới với một tô Phở nóng hổi, thơm lừng là điều rất phổ biến và truyền thống. Thậm chí, nguồn gốc của Phở cũng rất thú vị, với nhiều giả thuyết về việc nó có thể đã chịu ảnh hưởng từ ẩm thực Pháp (từ món pot-au-feu) và phát triển mạnh mẽ ở miền Bắc Việt Nam trước khi lan rộng ra cả nước.
+Latency: 8.03s
+Usage: {'input_tokens': 14, 'output_tokens': 141}
+--------------------------------------------------------------------------------
+Temperature: 0.5 | Run: 2
+Response: Chắc chắn rồi! Đây là một sự thật thú vị về Việt Nam:
+
+**Bạn có biết rằng món Bánh Mì của Việt Nam không chỉ là một món ăn đường phố nổi tiếng mà còn là biểu tượng của sự giao thoa văn hóa độc đáo?**
+
+Nó là sự kết hợp hoàn hảo giữa bánh mì baguette của Pháp (di sản từ thời thuộc địa) và các nguyên liệu, hương vị đặc trưng của Việt Nam như thịt nguội, pate, rau thơm, dưa chuột, đồ chua và ớt.
+
+Độ nổi tiếng của Bánh Mì lớn đến mức nó đã được đưa vào từ điển **Oxford English Dictionary vào năm 2011**! Một món ăn đơn giản nhưng mang trong mình cả một câu chuyện lịch sử và sự sáng tạo ẩm thực tuyệt vời!
+Latency: 9.13s
+Usage: {'input_tokens': 14, 'output_tokens': 168}
+--------------------------------------------------------------------------------
+Temperature: 0.5 | Run: 3
+Response: Chắc chắn rồi! Đây là một sự thật thú vị về Việt Nam:
+
+**Việt Nam sở hữu hang Sơn Đoòng, được công nhận là hang động tự nhiên lớn nhất thế giới.**
+
+Nó lớn đến mức có hệ sinh thái riêng biệt bên trong, với cả một khu rừng nguyên sinh, sông ngầm và hệ thống thời tiết riêng. Để hình dung, một tòa nhà chọc trời 40 tầng có thể dễ dàng nằm gọn bên trong hang động này! Hang Sơn Đoòng chỉ mới được khám phá hoàn toàn và mở cửa cho du lịch mạo hiểm trong những năm gần đây, thu hút những nhà thám hiểm từ khắp nơi trên thế giới.
+Latency: 9.69s
+Usage: {'input_tokens': 14, 'output_tokens': 140}
+--------------------------------------------------------------------------------
+Temperature: 1.0 | Run: 1
+Response: Tuyệt vời! Đây là một sự thật thú vị về Việt Nam:
+
+**Bánh mì, món ăn đường phố nổi tiếng của Việt Nam, thực chất là một sự kết hợp độc đáo giữa ẩm thực Pháp và Việt Nam.**
+
+Mặc dù bánh mì baguette có nguồn gốc từ Pháp (do người Pháp mang đến Việt Nam), người Việt đã biến tấu nó thành một chiếc bánh mì kẹp với nhiều loại nhân phong phú như thịt nguội, pate, rau thơm, dưa chuột, ớt, tạo nên hương vị đặc trưng không thể nhầm lẫn. Bánh mì thường xuyên được các tạp chí ẩm thực quốc tế vinh danh là một trong những món ăn đường phố ngon nhất thế giới!
+Latency: 8.44s
+Usage: {'input_tokens': 14, 'output_tokens': 147}
+--------------------------------------------------------------------------------
+Temperature: 1.0 | Run: 2
+Response: Một sự thật thú vị về Việt Nam là:
+
+**Ẩm thực Việt Nam không chỉ nổi tiếng về hương vị mà còn về triết lý cân bằng sâu sắc.**
+
+Nó thường nhấn mạnh sự hòa quyện của **5 yếu tố vị giác cơ bản**: cay, chua, mặn, ngọt và umami (vị ngon đậm đà). Đồng thời, sự tươi ngon của nguyên liệu và việc sử dụng dồi dào các loại rau thơm, rau sống là điểm đặc trưng không thể thiếu, giúp món ăn vừa ngon miệng vừa tốt cho sức khỏe. Đây là điều làm nên sự độc đáo và tinh tế của các món ăn Việt Nam.
+Latency: 7.37s
+Usage: {'input_tokens': 14, 'output_tokens': 136}
+--------------------------------------------------------------------------------
+Temperature: 1.0 | Run: 3
+Response: Chắc chắn rồi! Một sự thật thú vị về Việt Nam là:
+
+Việt Nam là **quốc gia xuất khẩu cà phê lớn thứ hai trên thế giới**, chỉ sau Brazil.
+
+Điều đặc biệt là Việt Nam nổi tiếng với việc sản xuất **cà phê Robusta**, loại cà phê có hương vị đậm đà và hàm lượng caffeine cao hơn Arabica. Văn hóa cà phê ở Việt Nam cũng rất độc đáo và sâu sắc, với những thức uống đặc trưng như:
+
+*   **Cà phê sữa đá:** Một loại cà phê đen đậm đặc pha với sữa đặc có đường và đá, là thức uống giải khát cực kỳ phổ biến.
+*   **Cà phê trứng:** Một món đồ uống độc đáo từ Hà Nội, với lớp kem trứng béo ngậy phủ lên trên cà phê đen nóng, tạo nên hương vị vừa ngọt ngào vừa đắng nhẹ.
+
+Vì vậy, nếu bạn là một tín đồ cà phê, Việt Nam chắc chắn là một điểm đến tuyệt vời để khám phá!
+Latency: 11.22s
+Usage: {'input_tokens': 14, 'output_tokens': 212}
+--------------------------------------------------------------------------------
+Temperature: 1.5 | Run: 1
+Response: Một sự thật thú vị về Việt Nam là:
+
+**Món bánh mì trứ danh của Việt Nam là một ví dụ điển hình cho sự kết hợp văn hóa ẩm thực tuyệt vời.**
+
+Nó có nguồn gốc từ bánh mì baguette của Pháp, được du nhập vào Việt Nam trong thời kỳ thuộc địa. Tuy nhiên, người Việt đã biến tấu chiếc bánh mì đơn giản này thành một kiệt tác ẩm thực đường phố độc đáo bằng cách sử dụng loại vỏ bánh giòn rụm hơn (thường có pha bột gạo), và thêm vào những nguyên liệu đặc trưng của Việt Nam như thịt nguội, patê, chả lụa, rau thơm (ngò rí), dưa chua (cà rốt, củ cải), ớt và các loại sốt đặc trưng.
+
+Giờ đây, bánh mì không chỉ là món ăn quen thuộc hàng ngày của người Việt mà còn là một trong những món ăn đường phố được yêu thích và nổi tiếng trên toàn thế giới, được nhiều tạp chí ẩm thực uy tín vinh danh.
+Latency: 10.88s
+Usage: {'input_tokens': 14, 'output_tokens': 219}
+--------------------------------------------------------------------------------
+Temperature: 1.5 | Run: 2
+Response: Chắc chắn rồi! Đây là một sự thật thú vị về Việt Nam:
+
+**Bạn có biết, Bánh Mì Việt Nam – món ăn đường phố nổi tiếng toàn cầu – có nguồn gốc từ chiếc bánh baguette của Pháp, nhưng đã được người Việt biến tấu và nâng tầm để trở thành một biểu tượng ẩm thực độc đáo?**
+
+Trong thời Pháp thuộc, người Pháp mang bánh mì baguette đến Việt Nam. Ban đầu, bánh mì chủ yếu được ăn kèm với bơ hoặc thịt nguội như một món ăn sang trọng. Tuy nhiên, người Việt Nam đã khéo léo biến tấu nó. Họ làm cho vỏ bánh giòn hơn, ruột bánh nhẹ và xốp hơn để phù hợp với khí hậu và khẩu vị địa phương.
+
+Điều làm nên sự khác biệt và khiến bánh mì Việt Nam trở nên nổi tiếng là việc người Việt đã kết hợp nó với vô vàn nguyên liệu đặc trưng: từ các loại thịt nguội (chả lụa, thịt nướng), pate gan, bơ, nước sốt, đến các loại rau củ muối chua (dưa chuột, cà rốt, củ cải), rau thơm (ngò rí), và ớt.
+
+Sự kết hợp hoàn hảo giữa vỏ bánh giòn rụm, nhân đậm đà hương vị phương Đông và phương Tây, cùng giá cả phải chăng, đã giúp bánh mì từ một món ăn bình dân trở thành một trong những món ăn đường phố ngon nhất thế giới, được nhiều tạp chí và đầu bếp quốc tế ca ngợi.
+Latency: 15.37s
+Usage: {'input_tokens': 14, 'output_tokens': 322}
+--------------------------------------------------------------------------------
+Temperature: 1.5 | Run: 3
+Response: Đây là một sự thật thú vị về Việt Nam:
+
+**Việt Nam là nước xuất khẩu cà phê lớn thứ hai thế giới, chỉ sau Brazil.**
+
+Nhưng điều thú vị hơn là văn hóa cà phê độc đáo của họ! Thay vì chỉ đơn thuần là Arabica, Việt Nam nổi tiếng với cà phê Robusta mạnh mẽ, thường được pha bằng **phin** truyền thống và trộn với sữa đặc có đường để tạo ra món **cà phê sữa đá** (iced milk coffee) mang tính biểu tượng – một trải nghiệm vừa mạnh mẽ, vừa ngọt ngào và cực kỳ sảng khoái!
+
+Và nếu bạn muốn một trải nghiệm độc đáo hơn nữa, hãy thử **cà phê trứng** (egg coffee) nổi tiếng ở Hà Nội, nơi lòng đỏ trứng gà được đánh bông với sữa đặc tạo thành một lớp kem mịn màng, béo ngậy phủ lên trên cà phê nóng!
+Latency: 10.00s
+Usage: {'input_tokens': 14, 'output_tokens': 189}
+--------------------------------------------------------------------------------
