@@ -362,6 +362,7 @@ def retry_with_backoff(
         try:
             return fn()
         except Exception as e:
+            print(f"[Attempt {attempt + 1}/{max_retries}] Error: {e}")
             last_exception = e
             if attempt < max_retries:
                 delay = base_delay * (2 ** attempt)
@@ -508,7 +509,7 @@ def format_comparison_table(results: list[dict]) -> str:
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     # print("=== Model Comparison Test ===")
-    # test_prompt = "Hãy giải thích sự khác biệt giữa temperature và top_p bằng tiếng Việt ngắn gọn trong 2 câu."
+    test_prompt = "Hãy giải thích sự khác biệt giữa temperature và top_p bằng tiếng Việt ngắn gọn trong 2 câu."
     # try:
     #     # Note: Requires valid API keys set in environment variables
     #     result = compare_models(test_prompt)
@@ -526,36 +527,41 @@ if __name__ == "__main__":
     #     streaming_chatbot()
     # except Exception as e:
     #     print(f"Chatbot failed to start: {e}")
-    test_prompt = "Hãy kể cho tôi một sự thật thú vị về Việt Nam."
-    temperatures = [0, 0.5, 1.0, 1.5]
-    runs_per_temperature = 3
-    output_file = "temperature_test_results.txt"
+    
+    # print("=== Temperature Test ===")
+    # test_prompt = "Hãy kể cho tôi một sự thật thú vị về Việt Nam."
+    # temperatures = [0, 0.5, 1.0, 1.5]
+    # runs_per_temperature = 3
+    # output_file = "temperature_test_results.txt"
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(f"Prompt: {test_prompt}\n")
-        f.write(f"Runs per temperature: {runs_per_temperature}\n")
-        f.write("\n")
+    # with open(output_file, "w", encoding="utf-8") as f:
+    #     f.write(f"Prompt: {test_prompt}\n")
+    #     f.write(f"Runs per temperature: {runs_per_temperature}\n")
+    #     f.write("\n")
 
-        for t in temperatures:
-            for run in range(1, runs_per_temperature + 1):
-                print(f"\n=== Testing call_gemini with temperature={t} run={run} ===")
-                result = call_gemini(
-                    prompt=test_prompt,
-                    model=GEMINI_MODEL,
-                    temperature=t,
-                    max_tokens=2048,
-                )
-                response_text, latency, usage = result
+    #     for t in temperatures:
+    #         for run in range(1, runs_per_temperature + 1):
+    #             print(f"\n=== Testing call_gemini with temperature={t} run={run} ===")
+    #             result = call_gemini(
+    #                 prompt=test_prompt,
+    #                 model=GEMINI_MODEL,
+    #                 temperature=t,
+    #                 max_tokens=2048,
+    #             )
+    #             response_text, latency, usage = result
 
-                print(f"Response: {response_text}")
-                print(f"Latency: {latency:.2f}s")
-                print(f"Usage: {usage}")
+    #             print(f"Response: {response_text}")
+    #             print(f"Latency: {latency:.2f}s")
+    #             print(f"Usage: {usage}")
 
-                f.write(f"Temperature: {t} | Run: {run}\n")
-                f.write(f"Response: {response_text}\n")
-                f.write(f"Latency: {latency:.2f}s\n")
-                f.write(f"Usage: {usage}\n")
-                f.write("-" * 80 + "\n")
+    #             f.write(f"Temperature: {t} | Run: {run}\n")
+    #             f.write(f"Response: {response_text}\n")
+    #             f.write(f"Latency: {latency:.2f}s\n")
+    #             f.write(f"Usage: {usage}\n")
+    #             f.write("-" * 80 + "\n")
 
-    print(f"\nTemperature test results saved to {output_file}")
-        
+    # print(f"\nTemperature test results saved to {output_file}")
+    
+    print("Retry with backoff test:")
+    result = retry_with_backoff(lambda: call_gemini(test_prompt), max_retries=2, base_delay=0.5)
+    print(f"Result: {result}")

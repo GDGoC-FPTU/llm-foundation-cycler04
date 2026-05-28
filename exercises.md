@@ -62,29 +62,33 @@ Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi n
 > * GPT-4o: ~ $5 / 1M input tokens, $15 / 1M output tokens (xấp xỉ trung bình ~ $10–15 / 1M mixed)
 > * GPT-4o-mini: ~ $0.15 / 1M tokens (xấp xỉ)
 >
-> Giả sử case cân bằng 50/50 input/output
+> Giả sử case cân bằng 50/50 input/output, chia token:
 >
-> Giả sử 1M tokens gồm:
+> * Input = 5.25M
+> * Output = 5.25M
 >
-> * 0.5M input
-> * 0.5M output
+> ### 1. GPT-4o cost
 >
-> Chi phí:
+> * Input cost:
 >
-> **GPT-4o:**
+> **5.25×5=26.25$**
 >
-> * input: 0.5 × 5 = 2.5$
-> * output: 0.5 × 15 = 7.5$
+> * Output cost:
 >
->   → tổng = **10$**
+> 5.25×15=78.75$
 >
-> **GPT-4o-mini:**
+> * Tổng/ngày:
 >
-> * 1M × 0.15 = **0.15$**
+> **26.25+78.75=105 $/ngày**
 >
-> Ratio:
+> ### 2. GPT-4o-mini cost
 >
-> * 10 / 0.15 ≈ **66×**
+> **10.5×0.15=1.575 $/ngày**
+>
+> ### Ratio đắt hơn bao nhiêu lần
+>
+> **105 / 1.575 ≈ 66.7**
+> → GPT-4o đắt hơn khoảng 67 lần so với GPT-4o-mini cho workload này.
 
 **Mô tả một trường hợp mà chi phí cao hơn của GPT-4o là xứng đáng, và một trường hợp GPT-4o-mini là lựa chọn tốt hơn:**
 
@@ -112,7 +116,7 @@ Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi n
 
 **Streaming quan trọng nhất trong trường hợp nào, và khi nào thì non-streaming lại phù hợp hơn?** (1 đoạn văn)
 
-> Streaming quan trọng nhất trong các hệ thống có yêu cầu tương tác liên tục với người dùng , ví dụ như chatbot, trợ lý AI, hoặc các ứng dụng viết nội dung, nơi việc hiển thị từng phần câu trả lời giúp người dùng cảm nhận phản hồi nhanh hơn dù tổng thời gian xử lý không đổi. Nó cũng hữu ích khi câu trả lời dài, vì người dùng có thể bắt đầu đọc ngay thay vì chờ toàn bộ output được sinh xong. 
+> Streaming quan trọng nhất trong các hệ thống có yêu cầu tương tác liên tục với người dùng , ví dụ như chatbot, trợ lý AI, hoặc các ứng dụng viết nội dung, nơi việc hiển thị từng phần câu trả lời giúp người dùng cảm nhận phản hồi nhanh hơn dù tổng thời gian xử lý không đổi. Nó cũng hữu ích khi câu trả lời dài, vì người dùng có thể bắt đầu đọc ngay thay vì chờ toàn bộ output được sinh xong.
 >
 > Ngược lại, non-streaming phù hợp hơn trong các tác vụ cần tính toàn vẹn đầu ra và không cần tính tương tác, ví dụ như như khi mô hình cần đọc và tóm tắt văn bản theo pipeline quy mô lớn.
 
